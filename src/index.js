@@ -15,3 +15,8 @@ window.addEventListener('load', () => {
 })
 // HTML input => autofocus 속성 추가 !
 /* <input autofocus /> */
+
+// 2 유효성 로직 검사 !
+// 대상 : ID, 비밀번호, 비밀번호 확인
+// 이벤트: (1) input focus out (2) 가입하기 버튼을 눌렀을 때
+// 핸들러: (1) 해당 input의 유효성 (2) 모든 필드의 유효성 검사
