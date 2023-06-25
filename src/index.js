@@ -128,3 +128,9 @@ $submit.addEventListener('click', (e) => {
     checkPwvaliation($pw.value)
     CheckPwCheckValiation($pwCheck.value)
 })
+
+// 4. 입력 확인 모달창
+// 제출하기 버튼 클릭 시, 모든 input의 값이 유효한 상태일 경우
+// 입력한 아이디와 비밀번호를 확인할 수 있는 모달 창을 보여주어야 합니다.
+// "취소하기" 버튼 클릭 시 모달 창이 닫혀야 합니다.
+// "가입하기" 버튼 클릭 시 윈도우의 alert 창을 이용해 "가입되었습니다 🥳 " 라는 메시지를 출력해야 합니다.
