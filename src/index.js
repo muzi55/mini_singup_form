@@ -170,3 +170,47 @@ $approveBtn.addEventListener('click', () => {
 // (최소: 12px, 최대: 20px)
 // 현재 폰트 사이즈가 20px일 경우 + 버튼 비활성화
 // 현재 폰트 사이즈가 12px일 경우 - 버튼 비활성화
+
+const $increaseFontBtn = document.getElementById('increase-font-btn')
+const $decreaseFontBtn = document.getElementById('decrease-font-btn')
+
+const $html = document.documentElement
+const MAX_FONT_SIZE = 20
+const MIN_FONT_SIZE = 12
+const getHtmlFontSize = () => {
+    // parseFloat('16px')
+    // parseFloat() 은 문자열속 숫자를 추출해낸다.
+    return parseFloat(
+        (currentHtmlFontSize = window.getComputedStyle($html).fontSize)
+    )
+}
+$increaseFontBtn.addEventListener('click', () => {
+    // fontsize가 늘어남
+    // Dom.style.fontSize = '' <= 이렇게 할 순 없음 너무많아 !!
+    // document.documentElement 로 HTML 에 접근할 수 있다. !!
+    // Window.getComputedStyle(elememt) 으로 style 값을 바꿀 수 있다 .!
+    // window.getComputedStyle(document.documentElement).fontSize
+
+    // 최댓값 : 20px
+    const nextFontSize = getHtmlFontSize()
+    // 만약 20px 이상이라면? increase 비활성
+    $html.style.fontSize = nextFontSize + 1
+    if (nextFontSize >= MAX_FONT_SIZE) {
+        $increaseFontBtn.disabled = true
+    }
+})
+$decreaseFontBtn.addEventListener('click', () => {
+    // fontsize가 줄어듬
+
+    // 최솟값 : 20px
+    const prevFontSize = getHtmlFontSize()
+    // 만약 12px 이하이라면? decrease 비활성
+    $html.style.fontSize = prevFontSize - 1
+    console.log(prevFontSize)
+    if (prevFontSize <= MIN_FONT_SIZE) {
+        $decreaseFontBtn.disabled = true
+    }
+    if (prevFontSize < MIN_FONT_SIZE) {
+        $increaseFontBtn.disabled = false
+    }
+})
