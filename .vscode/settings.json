@@ -1,7 +1,8 @@
 {
-    "editor.fontFamily": "D2Coding, Monaco, 'Courier New', monospace",
-    "editor.fontSize": 14,
+    "editor.fontFamily": "notoSans",
+    "editor.fontSize": 16,
     "editor.tabSize": 2,
+    "editor.mouseWheelZoom": true,
     "files.autoSave": "onWindowChange",
     "prettier.configPath": ".prettierrc.json",
     "editor.defaultFormatter": "esbenp.prettier-vscode",
