@@ -6,4 +6,12 @@
 
 // $붙히는 이유 => 코드를 읽는 사람이 이거는 Dom을 가져온것이라 말함
 const $id = document.getElementById('id')
-console.log($id)
+// console.log($id)
+
+// 윈도우가 로드되었을때 이벤트 시작
+// $id에 포커스
+window.addEventListener('load', () => {
+    $id.focus()
+})
+// HTML input => autofocus 속성 추가 !
+/* <input autofocus /> */
