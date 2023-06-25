@@ -99,8 +99,6 @@ const pw_CHECK_ERROR_MSG = {
 }
 const CheckPwCheckValiation = (value) => {
     // 비밀번호와 일치하면됨
-    // const isValidePwCheck = $pw.value === value
-    // console.log(isValidePwCheck)
 
     let isValidePwCheck
     if (value.length === 0) {
